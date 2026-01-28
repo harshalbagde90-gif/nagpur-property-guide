@@ -1,75 +1,96 @@
-import { Bot, MapPinned, Heart, TrendingUp, Users } from "lucide-react";
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Bot, MapPinned, Heart, TrendingUp, Users, Shield } from "lucide-react";
 
 const differentiators = [
   {
     icon: Bot,
     title: "AI-Powered Follow-ups",
-    description:
-      "Never miss a message. Smart automated responses ensure you get timely updates 24/7.",
+    description: "Never miss a message. Smart automated responses ensure you get timely updates 24/7.",
+    color: "bg-blue-500/10 text-blue-500",
   },
   {
     icon: MapPinned,
     title: "Local Nagpur Presence",
-    description:
-      "We live and work here. Deep knowledge of every locality, builder, and market trend.",
+    description: "We live and work here. Deep knowledge of every locality, builder, and market trend.",
+    color: "bg-green-500/10 text-green-500",
   },
   {
     icon: Heart,
     title: "Honest Guidance",
-    description:
-      "No fake urgency or inflated promises. We share realistic expectations, always.",
+    description: "No fake urgency or inflated promises. We share realistic expectations, always.",
+    color: "bg-red-500/10 text-red-500",
   },
   {
     icon: TrendingUp,
     title: "Resale Perspective",
-    description:
-      "We help you think about exit value, not just purchase. Long-term investment mindset.",
+    description: "We help you think about exit value, not just purchase. Long-term investment mindset.",
+    color: "bg-purple-500/10 text-purple-500",
   },
   {
     icon: Users,
     title: "Trusted by 100+ Families",
-    description:
-      "Growing community of satisfied property owners across Maharashtra.",
+    description: "Growing community of satisfied property owners across Maharashtra.",
+    color: "bg-orange-500/10 text-orange-500",
+  },
+  {
+    icon: Shield,
+    title: "Registry Verified",
+    description: "Every property is legally verified. Clear titles, no encumbrances, complete peace of mind.",
+    color: "bg-cyan-500/10 text-cyan-500",
   },
 ];
 
 export const WhyChooseUs = () => {
-  return (
-    <section className="py-16 md:py-24 bg-background">
-      <div className="container mx-auto px-4">
-        <div className="max-w-5xl mx-auto">
-          {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
-              Why Work With Us?
-            </h2>
-            <p className="text-muted-foreground max-w-xl mx-auto">
-              We're not a property portal. We're your dedicated local expert who
-              personally guides you through the entire journey.
-            </p>
-          </div>
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
-          {/* Differentiators Grid */}
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {differentiators.map((item, index) => (
-              <div
-                key={index}
-                className="flex gap-4 p-5 rounded-xl bg-secondary/50 hover:bg-secondary transition-colors"
-              >
-                <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
-                  <item.icon className="w-5 h-5 text-primary" />
-                </div>
-                <div>
-                  <h3 className="font-semibold text-foreground mb-1">
-                    {item.title}
-                  </h3>
-                  <p className="text-muted-foreground text-sm">
-                    {item.description}
-                  </p>
-                </div>
-              </div>
-            ))}
+  return (
+    <section className="py-20 md:py-32 bg-hero text-hero-foreground" ref={ref}>
+      <div className="container mx-auto px-4">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.5 }}
+          className="text-center mb-12 md:mb-16"
+        >
+          <div className="inline-flex items-center gap-2 text-accent text-sm font-medium mb-4">
+            <span className="w-8 h-px bg-accent" />
+            WHAT SETS US APART
+            <span className="w-8 h-px bg-accent" />
           </div>
+          <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4">
+            Why Work With Us?
+          </h2>
+          <p className="text-hero-muted max-w-xl mx-auto text-lg">
+            We're not a property portal. We're your dedicated local expert who
+            personally guides you through the entire journey.
+          </p>
+        </motion.div>
+
+        {/* Differentiators Grid */}
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-5xl mx-auto">
+          {differentiators.map((item, index) => (
+            <motion.div
+              key={index}
+              initial={{ opacity: 0, y: 30 }}
+              animate={isInView ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group p-6 rounded-2xl bg-hero-foreground/5 border border-hero-foreground/10 hover:border-accent/50 hover:bg-hero-foreground/10 transition-all duration-300"
+            >
+              <div className={`w-12 h-12 rounded-xl ${item.color} flex items-center justify-center mb-4`}>
+                <item.icon className="w-6 h-6" />
+              </div>
+              <h3 className="font-semibold text-hero-foreground text-lg mb-2">
+                {item.title}
+              </h3>
+              <p className="text-hero-muted text-sm leading-relaxed">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
         </div>
       </div>
     </section>

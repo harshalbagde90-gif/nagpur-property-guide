@@ -2,37 +2,37 @@
 @tailwind components;
 @tailwind utilities;
 
-/* Nagpur Property Expert - Deep Green Theme */
+/* Nagpur Property Expert - Elevar-Inspired Premium Theme */
 
 @layer base {
   :root {
-    --background: 0 0% 99%;
-    --foreground: 160 25% 10%;
+    --background: 0 0% 100%;
+    --foreground: 222 47% 11%;
 
     --card: 0 0% 100%;
-    --card-foreground: 160 25% 10%;
+    --card-foreground: 222 47% 11%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 160 25% 10%;
+    --popover-foreground: 222 47% 11%;
 
-    --primary: 152 45% 25%;
+    --primary: 222 47% 20%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 150 20% 95%;
-    --secondary-foreground: 152 45% 20%;
+    --secondary: 220 14% 96%;
+    --secondary-foreground: 222 47% 11%;
 
-    --muted: 150 15% 95%;
-    --muted-foreground: 160 10% 45%;
+    --muted: 220 14% 96%;
+    --muted-foreground: 220 9% 46%;
 
-    --accent: 152 40% 92%;
-    --accent-foreground: 152 45% 20%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 150 15% 88%;
-    --input: 150 15% 88%;
-    --ring: 152 45% 25%;
+    --border: 220 13% 91%;
+    --input: 220 13% 91%;
+    --ring: 217 91% 60%;
 
     --radius: 0.75rem;
 
@@ -40,60 +40,65 @@
     --whatsapp: 142 70% 45%;
     --whatsapp-foreground: 0 0% 100%;
 
+    /* Hero dark section */
+    --hero: 222 47% 11%;
+    --hero-foreground: 0 0% 100%;
+    --hero-muted: 220 9% 70%;
+
     /* Additional semantic tokens */
     --success: 142 76% 36%;
     --success-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 160 25% 10%;
-    --sidebar-primary: 152 45% 25%;
+    --sidebar-foreground: 222 47% 11%;
+    --sidebar-primary: 222 47% 20%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 150 20% 95%;
-    --sidebar-accent-foreground: 152 45% 20%;
-    --sidebar-border: 150 15% 88%;
-    --sidebar-ring: 152 45% 25%;
+    --sidebar-accent: 220 14% 96%;
+    --sidebar-accent-foreground: 222 47% 11%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217 91% 60%;
   }
 
   .dark {
-    --background: 160 25% 8%;
-    --foreground: 150 15% 95%;
+    --background: 222 47% 8%;
+    --foreground: 0 0% 98%;
 
-    --card: 160 25% 10%;
-    --card-foreground: 150 15% 95%;
+    --card: 222 47% 11%;
+    --card-foreground: 0 0% 98%;
 
-    --popover: 160 25% 10%;
-    --popover-foreground: 150 15% 95%;
+    --popover: 222 47% 11%;
+    --popover-foreground: 0 0% 98%;
 
-    --primary: 152 45% 45%;
+    --primary: 217 91% 60%;
     --primary-foreground: 0 0% 100%;
 
-    --secondary: 160 20% 15%;
-    --secondary-foreground: 150 15% 95%;
+    --secondary: 222 47% 15%;
+    --secondary-foreground: 0 0% 98%;
 
-    --muted: 160 20% 15%;
-    --muted-foreground: 150 15% 65%;
+    --muted: 222 47% 15%;
+    --muted-foreground: 220 9% 70%;
 
-    --accent: 160 20% 15%;
-    --accent-foreground: 150 15% 95%;
+    --accent: 217 91% 60%;
+    --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 160 20% 18%;
-    --input: 160 20% 18%;
-    --ring: 152 45% 45%;
+    --border: 222 47% 18%;
+    --input: 222 47% 18%;
+    --ring: 217 91% 60%;
 
     --whatsapp: 142 70% 45%;
     --whatsapp-foreground: 0 0% 100%;
 
-    --sidebar-background: 160 25% 8%;
-    --sidebar-foreground: 150 15% 95%;
-    --sidebar-primary: 152 45% 45%;
+    --sidebar-background: 222 47% 8%;
+    --sidebar-foreground: 0 0% 98%;
+    --sidebar-primary: 217 91% 60%;
     --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 160 20% 15%;
-    --sidebar-accent-foreground: 150 15% 95%;
-    --sidebar-border: 160 20% 18%;
-    --sidebar-ring: 152 45% 45%;
+    --sidebar-accent: 222 47% 15%;
+    --sidebar-accent-foreground: 0 0% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 217 91% 60%;
   }
 }
 
@@ -115,4 +120,33 @@
   .text-balance {
     text-wrap: balance;
   }
+}
+
+/* Marquee animation */
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 25s linear infinite;
+}
+
+/* Gradient text */
+.gradient-text {
+  background: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(200 80% 60%) 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Glass effect */
+.glass {
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }

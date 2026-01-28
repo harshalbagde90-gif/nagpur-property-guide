@@ -1,3 +1,6 @@
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -7,72 +10,82 @@ import {
 
 const faqs = [
   {
-    question: "Can I buy Nagpur property while living in Mumbai or Pune?",
-    answer:
-      "Absolutely! Many of our clients are based in Mumbai, Pune, and even abroad. We provide complete remote support including WhatsApp consultations, live video site visits, document verification, and registry coordination. You can complete the entire purchase without visiting Nagpur — or visit only for the final registry.",
+    question: "Can I buy Nagpur property while living in Mumbai/Pune?",
+    answer: "Absolutely! We specialize in helping out-of-city buyers. Through WhatsApp consultations, live video site visits, and complete documentation support, we make remote property buying seamless. Many of our clients are based in Mumbai, Pune, and other cities.",
   },
   {
     question: "Is an in-person site visit mandatory?",
-    answer:
-      "No, it's not mandatory. We offer live video site visits where you can see the property in real-time, ask questions, and get a genuine feel for the location. However, we always recommend a physical visit before registry if possible. We'll coordinate your visit and show you multiple properties in one day.",
+    answer: "No, it's not mandatory. We offer detailed live video site visits where you can see the property in real-time and ask questions. However, we always recommend an in-person visit before final decision if possible. We can coordinate your visit when you're in Nagpur.",
   },
   {
     question: "How does plot registry work in Maharashtra?",
-    answer:
-      "Plot registration in Maharashtra involves stamp duty (typically 5-6% of property value) and registration charges (1%). We guide you through the entire process: document verification, stamp duty calculation, IGR portal procedures, and the final Sub-Registrar visit. We ensure all paperwork is legally compliant.",
+    answer: "Plot registry in Maharashtra is done at the Sub-Registrar office. You need documents like sale deed, 7/12 extract, NA order (for non-agricultural land), and ID proofs. Stamp duty is typically 5-6% of property value. We guide you through the entire process and coordinate with lawyers.",
   },
   {
-    question: "What documents should I verify before buying a plot?",
-    answer:
-      "Essential documents include: 7/12 extract, property card, approved layout plan, RERA registration (if applicable), NA order (for agricultural to non-agricultural conversion), encumbrance certificate, and title search report. We conduct this verification for every property we recommend.",
+    question: "What documents should I verify before buying?",
+    answer: "Key documents include: 7/12 extract, property card, NA order (if applicable), RERA registration, approved layout plan, title deed chain, encumbrance certificate, and tax receipts. We verify all these documents before recommending any property.",
   },
   {
-    question: "Is Nagpur good for long-term investment?",
-    answer:
-      "Nagpur shows consistent growth due to infrastructure development (Metro, MIHAN, Outer Ring Road), affordable entry prices, and central location in India. While we've seen 8-12% annual appreciation in prime areas, real estate is a long-term investment (5-10 years). We never make unrealistic ROI promises and encourage thorough research.",
+    question: "Is Nagpur good for long-term property investment?",
+    answer: "Nagpur offers strong long-term potential due to: Central India location, ongoing Metro expansion, MIHAN SEZ development, IT corridor growth, and prices 40-60% lower than Mumbai/Pune. However, like any investment, it carries risks. We provide honest assessment without over-promising returns.",
   },
   {
     question: "Do you charge any fees for consultation?",
-    answer:
-      "Initial consultation and property shortlisting is completely free. As channel partners, we work with developers and earn commission from them — not from you. There are no hidden charges. Our fees, if any, are always disclosed upfront before you proceed.",
+    answer: "Initial consultation and property shortlisting are completely free. We earn our commission only when a deal is successfully closed. There are no hidden charges or upfront fees.",
   },
 ];
 
 export const FAQSection = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
+
   return (
-    <section className="py-16 md:py-24 bg-secondary/30" id="faq">
+    <section className="py-20 md:py-32 bg-background" id="faq" ref={ref}>
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto">
           {/* Section Header */}
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-bold text-foreground mb-4">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5 }}
+            className="text-center mb-12"
+          >
+            <div className="inline-flex items-center gap-2 text-accent text-sm font-medium mb-4">
+              <span className="w-8 h-px bg-accent" />
+              FAQ
+              <span className="w-8 h-px bg-accent" />
+            </div>
+            <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Frequently Asked Questions
             </h2>
-            <p className="text-muted-foreground">
-              Common questions about buying property in Nagpur. Still have doubts?{" "}
-              <span className="text-primary font-medium">
-                Ask us on WhatsApp
-              </span>
+            <p className="text-muted-foreground text-lg">
+              Common questions about buying property in Nagpur. Can't find your answer? WhatsApp us!
             </p>
-          </div>
+          </motion.div>
 
           {/* FAQ Accordion */}
-          <Accordion type="single" collapsible className="space-y-3">
-            {faqs.map((faq, index) => (
-              <AccordionItem
-                key={index}
-                value={`faq-${index}`}
-                className="bg-card border border-border/50 rounded-xl px-6 data-[state=open]:shadow-sm"
-              >
-                <AccordionTrigger className="text-left text-foreground font-medium py-5 hover:no-underline">
-                  {faq.question}
-                </AccordionTrigger>
-                <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.5, delay: 0.2 }}
+          >
+            <Accordion type="single" collapsible className="space-y-4">
+              {faqs.map((faq, index) => (
+                <AccordionItem
+                  key={index}
+                  value={`item-${index}`}
+                  className="border border-border rounded-xl px-6 data-[state=open]:border-accent/50 transition-colors"
+                >
+                  <AccordionTrigger className="text-left hover:no-underline py-5">
+                    <span className="font-medium text-foreground">{faq.question}</span>
+                  </AccordionTrigger>
+                  <AccordionContent className="text-muted-foreground pb-5 leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </motion.div>
         </div>
       </div>
     </section>

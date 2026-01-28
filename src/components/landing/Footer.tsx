@@ -1,73 +1,89 @@
-import { MapPin, Phone, Mail } from "lucide-react";
+import { MessageCircle, Phone, Mail, MapPin } from "lucide-react";
+
+const WHATSAPP_NUMBER = "919876543210";
+
+const quickLinks = [
+  { label: "Properties", href: "#properties" },
+  { label: "Why Nagpur", href: "#why-nagpur" },
+  { label: "Our Process", href: "#process" },
+  { label: "FAQ", href: "#faq" },
+  { label: "Contact", href: "#contact-form" },
+];
 
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12">
+    <footer className="bg-foreground text-background py-12 md:py-16">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-8 mb-8">
-            {/* Brand */}
-            <div>
-              <h3 className="text-xl font-bold mb-3">Nagpur Property Expert</h3>
-              <p className="text-background/70 text-sm">
-                Your trusted local partner for verified real estate investments
-                in Nagpur and Vidarbha.
-              </p>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+            <div className="flex items-center gap-2 mb-4">
+              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
+                <span className="text-accent-foreground font-bold text-lg">N</span>
+              </div>
+              <span className="font-semibold text-lg">Nagpur Property Expert</span>
             </div>
-
-            {/* Quick Links */}
-            <div>
-              <h4 className="font-semibold mb-3">Quick Links</h4>
-              <ul className="space-y-2 text-sm text-background/70">
-                <li>
-                  <a href="#properties" className="hover:text-background transition-colors">
-                    Featured Properties
-                  </a>
-                </li>
-                <li>
-                  <a href="#faq" className="hover:text-background transition-colors">
-                    FAQs
-                  </a>
-                </li>
-                <li>
-                  <a href="#contact-form" className="hover:text-background transition-colors">
-                    Contact Us
-                  </a>
-                </li>
-              </ul>
-            </div>
-
-            {/* Contact */}
-            <div>
-              <h4 className="font-semibold mb-3">Contact</h4>
-              <ul className="space-y-2 text-sm text-background/70">
-                <li className="flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  Nagpur, Maharashtra
-                </li>
-                <li className="flex items-center gap-2">
-                  <Phone className="w-4 h-4" />
-                  +91 98765 43210
-                </li>
-                <li className="flex items-center gap-2">
-                  <Mail className="w-4 h-4" />
-                  info@nagpurproperty.com
-                </li>
-              </ul>
-            </div>
+            <p className="text-background/70 text-sm leading-relaxed max-w-md mb-4">
+              Your trusted local partner for verified Nagpur properties. 
+              We help local and out-of-city buyers invest with confidence through 
+              transparent process and honest guidance.
+            </p>
+            <a
+              href={`https://wa.me/${WHATSAPP_NUMBER}`}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+            >
+              <MessageCircle className="w-4 h-4" />
+              Chat on WhatsApp
+            </a>
           </div>
 
-          {/* Bottom */}
-          <div className="border-t border-background/20 pt-6 text-center text-sm text-background/60">
-            <p>
-              © {new Date().getFullYear()} Nagpur Property Expert. All rights
-              reserved.
-            </p>
-            <p className="mt-2 text-xs">
-              Disclaimer: We are channel partners, not builders. Property details
-              are as provided by developers. Verify all information independently.
-            </p>
+          {/* Quick Links */}
+          <div>
+            <h4 className="font-semibold mb-4">Quick Links</h4>
+            <ul className="space-y-2">
+              {quickLinks.map((link) => (
+                <li key={link.href}>
+                  <a
+                    href={link.href}
+                    className="text-background/70 hover:text-background text-sm transition-colors"
+                  >
+                    {link.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
           </div>
+
+          {/* Contact */}
+          <div>
+            <h4 className="font-semibold mb-4">Contact Us</h4>
+            <ul className="space-y-3">
+              <li className="flex items-center gap-2 text-background/70 text-sm">
+                <Phone className="w-4 h-4" />
+                +91 98765 43210
+              </li>
+              <li className="flex items-center gap-2 text-background/70 text-sm">
+                <Mail className="w-4 h-4" />
+                info@nagpurproperty.com
+              </li>
+              <li className="flex items-start gap-2 text-background/70 text-sm">
+                <MapPin className="w-4 h-4 mt-0.5" />
+                <span>Nagpur, Maharashtra, India</span>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        {/* Bottom */}
+        <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
+          <p className="text-background/50 text-sm">
+            © 2025 Nagpur Property Expert. All rights reserved.
+          </p>
+          <p className="text-background/50 text-xs">
+            Disclaimer: Property investment carries risks. Past returns are not indicative of future performance.
+          </p>
         </div>
       </div>
     </footer>
