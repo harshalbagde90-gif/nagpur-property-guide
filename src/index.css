@@ -6,99 +6,103 @@
 
 @layer base {
   :root {
-    --background: 0 0% 100%;
-    --foreground: 222 47% 11%;
+    --background: 60 33% 98%;
+    /* Very light cream background */
+    --foreground: 0 0% 10%;
 
     --card: 0 0% 100%;
-    --card-foreground: 222 47% 11%;
+    --card-foreground: 0 0% 10%;
 
     --popover: 0 0% 100%;
-    --popover-foreground: 222 47% 11%;
+    --popover-foreground: 0 0% 10%;
 
-    --primary: 222 47% 20%;
-    --primary-foreground: 0 0% 100%;
+    /* Golden Yellow Primary */
+    --primary: 40 100% 48%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 220 14% 96%;
-    --secondary-foreground: 222 47% 11%;
+    --secondary: 0 0% 96%;
+    --secondary-foreground: 0 0% 10%;
 
-    --muted: 220 14% 96%;
-    --muted-foreground: 220 9% 46%;
+    --muted: 0 0% 96%;
+    --muted-foreground: 0 0% 45%;
 
-    --accent: 217 91% 60%;
+    /* Orange Highlight */
+    --accent: 24 100% 63%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 84.2% 60.2%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 220 13% 91%;
-    --input: 220 13% 91%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 90%;
+    --input: 0 0% 90%;
+    --ring: 40 100% 48%;
 
     --radius: 0.75rem;
 
-    /* WhatsApp green for CTAs */
-    --whatsapp: 142 70% 45%;
+    /* Forest Green for trust/success */
+    --whatsapp: 124 55% 24%;
     --whatsapp-foreground: 0 0% 100%;
 
-    /* Hero dark section */
-    --hero: 222 47% 11%;
-    --hero-foreground: 0 0% 100%;
-    --hero-muted: 220 9% 70%;
+    /* Hero section - Deep Black */
+    --hero: 0 0% 10%;
+    --hero-foreground: 60 56% 91%;
+    /* Cream text */
+    --hero-muted: 0 0% 70%;
 
-    /* Additional semantic tokens */
-    --success: 142 76% 36%;
+    /* Success state */
+    --success: 124 55% 24%;
     --success-foreground: 0 0% 100%;
 
     --sidebar-background: 0 0% 98%;
-    --sidebar-foreground: 222 47% 11%;
-    --sidebar-primary: 222 47% 20%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 220 14% 96%;
-    --sidebar-accent-foreground: 222 47% 11%;
-    --sidebar-border: 220 13% 91%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-foreground: 0 0% 10%;
+    --sidebar-primary: 40 100% 48%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 96%;
+    --sidebar-accent-foreground: 0 0% 10%;
+    --sidebar-border: 0 0% 90%;
+    --sidebar-ring: 40 100% 48%;
   }
 
   .dark {
-    --background: 222 47% 8%;
-    --foreground: 0 0% 98%;
+    --background: 0 0% 5%;
+    --foreground: 60 56% 91%;
 
-    --card: 222 47% 11%;
-    --card-foreground: 0 0% 98%;
+    --card: 0 0% 10%;
+    --card-foreground: 60 56% 91%;
 
-    --popover: 222 47% 11%;
-    --popover-foreground: 0 0% 98%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 60 56% 91%;
 
-    --primary: 217 91% 60%;
-    --primary-foreground: 0 0% 100%;
+    --primary: 40 100% 48%;
+    --primary-foreground: 0 0% 10%;
 
-    --secondary: 222 47% 15%;
-    --secondary-foreground: 0 0% 98%;
+    --secondary: 0 0% 15%;
+    --secondary-foreground: 60 56% 91%;
 
-    --muted: 222 47% 15%;
-    --muted-foreground: 220 9% 70%;
+    --muted: 0 0% 15%;
+    --muted-foreground: 0 0% 70%;
 
-    --accent: 217 91% 60%;
+    --accent: 24 100% 63%;
     --accent-foreground: 0 0% 100%;
 
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 0 0% 100%;
 
-    --border: 222 47% 18%;
-    --input: 222 47% 18%;
-    --ring: 217 91% 60%;
+    --border: 0 0% 15%;
+    --input: 0 0% 15%;
+    --ring: 40 100% 48%;
 
-    --whatsapp: 142 70% 45%;
+    --whatsapp: 124 55% 24%;
     --whatsapp-foreground: 0 0% 100%;
 
-    --sidebar-background: 222 47% 8%;
-    --sidebar-foreground: 0 0% 98%;
-    --sidebar-primary: 217 91% 60%;
-    --sidebar-primary-foreground: 0 0% 100%;
-    --sidebar-accent: 222 47% 15%;
-    --sidebar-accent-foreground: 0 0% 98%;
-    --sidebar-border: 222 47% 18%;
-    --sidebar-ring: 217 91% 60%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 60 56% 91%;
+    --sidebar-primary: 40 100% 48%;
+    --sidebar-primary-foreground: 0 0% 10%;
+    --sidebar-accent: 0 0% 15%;
+    --sidebar-accent-foreground: 60 56% 91%;
+    --sidebar-border: 0 0% 15%;
+    --sidebar-ring: 40 100% 48%;
   }
 }
 
@@ -127,6 +131,7 @@
   0% {
     transform: translateX(0%);
   }
+
   100% {
     transform: translateX(-50%);
   }
@@ -138,10 +143,19 @@
 
 /* Gradient text */
 .gradient-text {
-  background: linear-gradient(135deg, hsl(217 91% 60%) 0%, hsl(200 80% 60%) 100%);
+  background: linear-gradient(135deg, hsl(40 100% 48%) 0%, hsl(24 100% 63%) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
+}
+
+.golden-glow {
+  box-shadow: 0 0 15px rgba(244, 163, 0, 0.3);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 25px rgba(244, 163, 0, 0.6);
+  transform: translateY(-2px);
 }
 
 /* Glass effect */

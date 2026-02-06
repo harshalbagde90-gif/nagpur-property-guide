@@ -6,6 +6,7 @@ import { PropertyCards } from "@/components/landing/PropertyCards";
 import { WhyChooseUs } from "@/components/landing/WhyChooseUs";
 import { TestimonialsSection } from "@/components/landing/TestimonialsSection";
 import { WhyNagpur } from "@/components/landing/WhyNagpur";
+import { MarketOverview } from "@/components/landing/MarketOverview";
 import { ProcessSteps } from "@/components/landing/ProcessSteps";
 import { OutOfCitySection } from "@/components/landing/OutOfCitySection";
 import { FAQSection } from "@/components/landing/FAQSection";
@@ -24,6 +25,7 @@ const Index = () => {
       <WhyChooseUs />
       <TestimonialsSection />
       <WhyNagpur />
+      <MarketOverview />
       <ProcessSteps />
       <OutOfCitySection />
       <FAQSection />

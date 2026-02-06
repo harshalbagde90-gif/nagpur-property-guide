@@ -41,10 +41,10 @@ export const TestimonialsSection = () => {
           transition={{ duration: 0.5 }}
           className="text-center mb-12 md:mb-16"
         >
-          <div className="inline-flex items-center gap-2 text-accent text-sm font-medium mb-4">
-            <span className="w-8 h-px bg-accent" />
+          <div className="inline-flex items-center gap-2 text-primary text-sm font-medium mb-4">
+            <span className="w-8 h-px bg-primary" />
             TESTIMONIALS
-            <span className="w-8 h-px bg-accent" />
+            <span className="w-8 h-px bg-primary" />
           </div>
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
             What Our Clients Say
@@ -62,14 +62,14 @@ export const TestimonialsSection = () => {
               initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.5, delay: index * 0.1 }}
-              className="p-6 rounded-2xl bg-card border border-border hover:border-accent/30 hover:shadow-lg transition-all duration-300"
+              className="p-6 rounded-2xl bg-card border border-border hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300"
             >
-              <Quote className="w-8 h-8 text-accent/30 mb-4" />
-              
+              <Quote className="w-8 h-8 text-primary/30 mb-4" />
+
               {/* Rating */}
               <div className="flex gap-1 mb-4">
                 {[...Array(testimonial.rating)].map((_, i) => (
-                  <Star key={i} className="w-4 h-4 fill-accent text-accent" />
+                  <Star key={i} className="w-4 h-4 fill-primary text-primary" />
                 ))}
               </div>
 

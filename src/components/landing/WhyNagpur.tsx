@@ -47,11 +47,11 @@ export const WhyNagpur = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="inline-flex items-center gap-2 text-accent text-sm font-medium">
-              <span className="w-8 h-px bg-accent" />
+            <div className="inline-flex items-center gap-2 text-primary text-sm font-medium">
+              <span className="w-8 h-px bg-primary" />
               WHY NAGPUR
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground leading-tight">
               Why Invest in
               <br />
@@ -72,8 +72,8 @@ export const WhyNagpur = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="flex gap-4 p-4 rounded-xl bg-card border border-border hover:border-accent/30 transition-colors"
                 >
-                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-accent/10 flex items-center justify-center">
-                    <reason.icon className="w-5 h-5 text-accent" />
+                  <div className="flex-shrink-0 w-10 h-10 rounded-lg bg-primary/10 flex items-center justify-center">
+                    <reason.icon className="w-5 h-5 text-primary" />
                   </div>
                   <div>
                     <h3 className="font-semibold text-foreground mb-1">{reason.title}</h3>
@@ -102,7 +102,7 @@ export const WhyNagpur = () => {
                 className="w-full h-[500px] md:h-[600px] object-cover"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-hero via-hero/50 to-transparent" />
-              
+
               {/* CTA Overlay */}
               <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
                 <h3 className="text-2xl md:text-3xl font-bold text-hero-foreground mb-2">
@@ -111,7 +111,7 @@ export const WhyNagpur = () => {
                 <p className="text-hero-muted mb-4">
                   Get personalized property recommendations based on your investment goals.
                 </p>
-                <Button className="bg-hero-foreground text-hero hover:bg-hero-foreground/90 rounded-full">
+                <Button className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full shadow-lg shadow-primary/20">
                   Get Started
                   <ArrowRight className="w-4 h-4 ml-2" />
                 </Button>

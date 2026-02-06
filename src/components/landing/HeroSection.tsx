@@ -1,17 +1,34 @@
+import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { MessageCircle, Calendar, CheckCircle } from "lucide-react";
-import { motion } from "framer-motion";
+import { motion, AnimatePresence } from "framer-motion";
 
 const WHATSAPP_NUMBER = "919876543210";
 const WHATSAPP_MESSAGE = encodeURIComponent("Hi, I'm interested in Nagpur property. Please share details.");
 
 const features = [
   "Registry Verified",
-  "On-Ground Support", 
+  "On-Ground Support",
   "Transparent Process",
 ];
 
+const videos = [
+  "/Videos/v 1.mp4",
+  "/Videos/v2.mp4",
+  "/Videos/v3.mp4",
+  "/Videos/v4.mp4"
+];
+
 export const HeroSection = () => {
+  const [currentVideo, setCurrentVideo] = useState(0);
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentVideo((prev) => (prev + 1) % videos.length);
+    }, 8000); // Switch video every 8 seconds
+    return () => clearInterval(timer);
+  }, []);
+
   const handleWhatsAppClick = () => {
     window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${WHATSAPP_MESSAGE}`, "_blank");
   };
@@ -22,13 +39,32 @@ export const HeroSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-center bg-hero overflow-hidden">
-      {/* Background gradient overlay */}
-      <div className="absolute inset-0 bg-gradient-to-br from-hero via-hero to-accent/20" />
-      
-      {/* Decorative elements */}
-      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-accent/10 rounded-full blur-3xl" />
-      <div className="absolute bottom-1/4 left-1/4 w-64 h-64 bg-accent/5 rounded-full blur-3xl" />
+    <section className="relative min-h-screen flex items-center bg-black overflow-hidden font-poppins">
+      {/* Video Background Slider */}
+      <div className="absolute inset-0 z-0">
+        <AnimatePresence mode="wait">
+          <motion.video
+            key={currentVideo}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            exit={{ opacity: 0 }}
+            transition={{ duration: 1, ease: "easeInOut" }}
+            autoPlay
+            loop
+            muted
+            playsInline
+            className="absolute inset-0 w-full h-full object-cover"
+          >
+            <source src={videos[currentVideo]} type="video/mp4" />
+          </motion.video>
+        </AnimatePresence>
+      </div>
+
+      {/* 60% Black Overlay */}
+      <div className="absolute inset-0 bg-black/60 z-[1]" />
+
+      {/* Subtle Golden Glow for Premium Feel */}
+      <div className="absolute top-1/4 right-1/4 w-96 h-96 bg-primary/20 rounded-full blur-[120px] opacity-20 z-[1]" />
 
       <div className="container mx-auto px-4 py-24 md:py-32 relative z-10">
         <div className="max-w-4xl mx-auto text-center space-y-8">
@@ -73,7 +109,7 @@ export const HeroSection = () => {
             transition={{ duration: 0.5, delay: 0.2 }}
             className="text-lg md:text-xl text-hero-muted max-w-2xl mx-auto"
           >
-            We combine local expertise, verified properties, and transparent process 
+            We combine local expertise, verified properties, and transparent process
             to help you invest in Nagpur real estate with complete confidence.
           </motion.p>
 
@@ -86,7 +122,7 @@ export const HeroSection = () => {
           >
             <Button
               size="lg"
-              className="bg-hero-foreground text-hero hover:bg-hero-foreground/90 text-base px-8 py-6 rounded-full shadow-lg hover:shadow-xl transition-all"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 text-base px-8 py-6 rounded-full font-poppins font-bold hover-glow transition-all border-none"
               onClick={handleWhatsAppClick}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
@@ -95,7 +131,7 @@ export const HeroSection = () => {
             <Button
               size="lg"
               variant="outline"
-              className="text-base px-8 py-6 rounded-full border-hero-foreground/30 text-hero-foreground hover:bg-hero-foreground/10 transition-all"
+              className="text-base px-8 py-6 rounded-full border-accent text-accent font-poppins font-bold hover:bg-accent hover:text-accent-foreground hover:shadow-[0_0_20px_rgba(255,140,66,0.5)] transition-all"
               onClick={handleBookVisitClick}
             >
               <Calendar className="w-5 h-5 mr-2" />

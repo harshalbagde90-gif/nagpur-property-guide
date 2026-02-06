@@ -29,7 +29,7 @@ export const ContactSection = () => {
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, margin: "-100px" });
   const { toast } = useToast();
-  
+
   const [formData, setFormData] = useState({
     name: "",
     phone: "",
@@ -40,7 +40,7 @@ export const ContactSection = () => {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    
+
     if (!formData.name || !formData.phone || !formData.budget) {
       toast({
         title: "Please fill all required fields",
@@ -93,7 +93,7 @@ export const ContactSection = () => {
               <span className="w-8 h-px bg-accent" />
               GET IN TOUCH
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               Ready to Start Your
               <br />
@@ -101,7 +101,7 @@ export const ContactSection = () => {
             </h2>
 
             <p className="text-hero-muted text-lg leading-relaxed">
-              Take the first step towards your Nagpur property investment. 
+              Take the first step towards your Nagpur property investment.
               Fill the form or WhatsApp us directly for instant assistance.
             </p>
 
@@ -165,7 +165,7 @@ export const ContactSection = () => {
                   placeholder="Enter your full name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="bg-hero-foreground/5 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-muted/50 focus:border-accent"
+                  className="bg-hero-foreground/5 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-muted/50 focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
 
@@ -179,7 +179,7 @@ export const ContactSection = () => {
                   placeholder="10-digit mobile number"
                   value={formData.phone}
                   onChange={(e) => setFormData({ ...formData, phone: e.target.value })}
-                  className="bg-hero-foreground/5 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-muted/50 focus:border-accent"
+                  className="bg-hero-foreground/5 border-hero-foreground/20 text-hero-foreground placeholder:text-hero-muted/50 focus:border-primary focus:ring-1 focus:ring-primary"
                 />
               </div>
 
@@ -211,7 +211,7 @@ export const ContactSection = () => {
                   onCheckedChange={(checked) =>
                     setFormData({ ...formData, isOutOfCity: checked as boolean })
                   }
-                  className="border-hero-foreground/30 data-[state=checked]:bg-accent data-[state=checked]:border-accent"
+                  className="border-hero-foreground/30 data-[state=checked]:bg-primary data-[state=checked]:border-primary"
                 />
                 <Label htmlFor="outOfCity" className="text-hero-muted text-sm cursor-pointer">
                   I'm based outside Nagpur (Mumbai/Pune/Other)
@@ -221,7 +221,7 @@ export const ContactSection = () => {
               <Button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-hero-foreground text-hero hover:bg-hero-foreground/90 rounded-full py-6"
+                className="w-full bg-primary text-primary-foreground hover:bg-primary/90 rounded-full py-6 shadow-lg shadow-primary/20"
               >
                 {isSubmitting ? (
                   "Submitting..."

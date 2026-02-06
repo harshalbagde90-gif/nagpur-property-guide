@@ -8,37 +8,37 @@ const differentiators = [
     icon: Bot,
     title: "AI-Powered Follow-ups",
     description: "Never miss a message. Smart automated responses ensure you get timely updates 24/7.",
-    color: "bg-blue-500/10 text-blue-500",
+    color: "bg-primary/20 text-primary",
   },
   {
     icon: MapPinned,
     title: "Local Nagpur Presence",
     description: "We live and work here. Deep knowledge of every locality, builder, and market trend.",
-    color: "bg-green-500/10 text-green-500",
+    color: "bg-green-600/10 text-green-600",
   },
   {
     icon: Heart,
     title: "Honest Guidance",
     description: "No fake urgency or inflated promises. We share realistic expectations, always.",
-    color: "bg-red-500/10 text-red-500",
+    color: "bg-accent/20 text-accent",
   },
   {
     icon: TrendingUp,
     title: "Resale Perspective",
     description: "We help you think about exit value, not just purchase. Long-term investment mindset.",
-    color: "bg-purple-500/10 text-purple-500",
+    color: "bg-primary/20 text-primary",
   },
   {
     icon: Users,
     title: "Trusted by 100+ Families",
     description: "Growing community of satisfied property owners across Maharashtra.",
-    color: "bg-orange-500/10 text-orange-500",
+    color: "bg-primary/20 text-primary",
   },
   {
     icon: Shield,
     title: "Registry Verified",
     description: "Every property is legally verified. Clear titles, no encumbrances, complete peace of mind.",
-    color: "bg-cyan-500/10 text-cyan-500",
+    color: "bg-primary/20 text-primary",
   },
 ];
 

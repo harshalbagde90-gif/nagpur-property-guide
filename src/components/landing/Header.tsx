@@ -34,9 +34,8 @@ export const Header = () => {
       <motion.header
         initial={{ y: -100 }}
         animate={{ y: 0 }}
-        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
-          isScrolled ? "bg-hero/95 backdrop-blur-md shadow-lg" : "bg-transparent"
-        }`}
+        className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${isScrolled ? "bg-hero/95 backdrop-blur-md shadow-lg" : "bg-transparent"
+          }`}
       >
         <div className="container mx-auto px-4">
           <div className="flex items-center justify-between h-16 md:h-20">
@@ -67,7 +66,7 @@ export const Header = () => {
             <div className="flex items-center gap-3">
               <Button
                 onClick={handleWhatsAppClick}
-                className="hidden sm:flex bg-hero-foreground text-hero hover:bg-hero-foreground/90 rounded-full px-5"
+                className="hidden sm:flex bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-5 font-poppins font-bold hover-glow transition-all"
               >
                 <MessageCircle className="w-4 h-4 mr-2" />
                 Contact Us
@@ -107,7 +106,7 @@ export const Header = () => {
               ))}
               <Button
                 onClick={handleWhatsAppClick}
-                className="mt-4 bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground rounded-full px-8 py-6"
+                className="mt-4 bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 py-6 shadow-lg shadow-primary/20"
               >
                 <MessageCircle className="w-5 h-5 mr-2" />
                 WhatsApp Us

@@ -50,10 +50,10 @@ export const FAQSection = () => {
             transition={{ duration: 0.5 }}
             className="text-center mb-12"
           >
-            <div className="inline-flex items-center gap-2 text-accent text-sm font-medium mb-4">
-              <span className="w-8 h-px bg-accent" />
+            <div className="inline-flex items-center gap-2 text-primary text-sm font-medium mb-4">
+              <span className="w-8 h-px bg-primary" />
               FAQ
-              <span className="w-8 h-px bg-accent" />
+              <span className="w-8 h-px bg-primary" />
             </div>
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold text-foreground mb-4">
               Frequently Asked Questions
@@ -74,7 +74,7 @@ export const FAQSection = () => {
                 <AccordionItem
                   key={index}
                   value={`item-${index}`}
-                  className="border border-border rounded-xl px-6 data-[state=open]:border-accent/50 transition-colors"
+                  className="border border-border rounded-xl px-6 data-[state=open]:border-primary/50 transition-colors"
                 >
                   <AccordionTrigger className="text-left hover:no-underline py-5">
                     <span className="font-medium text-foreground">{faq.question}</span>

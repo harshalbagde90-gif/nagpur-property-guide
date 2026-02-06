@@ -49,11 +49,11 @@ export const OutOfCitySection = () => {
             transition={{ duration: 0.6 }}
             className="space-y-6"
           >
-            <div className="inline-flex items-center gap-2 text-accent text-sm font-medium">
-              <MapPin className="w-4 h-4" />
+            <div className="inline-flex items-center gap-2 text-primary text-sm font-medium">
+              <MapPin className="w-4 h-4 text-primary" />
               FOR OUT-OF-CITY BUYERS
             </div>
-            
+
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold leading-tight">
               Buy Property in Nagpur —
               <br />
@@ -74,7 +74,7 @@ export const OutOfCitySection = () => {
                   transition={{ duration: 0.5, delay: index * 0.1 }}
                   className="p-4 rounded-xl bg-hero-foreground/5 border border-hero-foreground/10"
                 >
-                  <service.icon className="w-6 h-6 text-accent mb-3" />
+                  <service.icon className="w-6 h-6 text-primary mb-3" />
                   <h3 className="font-semibold text-hero-foreground text-sm mb-1">
                     {service.title}
                   </h3>
@@ -87,7 +87,7 @@ export const OutOfCitySection = () => {
 
             <Button
               onClick={handleWhatsAppClick}
-              className="bg-whatsapp hover:bg-whatsapp/90 text-whatsapp-foreground rounded-full px-8"
+              className="bg-primary text-primary-foreground hover:bg-primary/90 rounded-full px-8 shadow-lg shadow-primary/20"
             >
               <MessageCircle className="w-4 h-4 mr-2" />
               Connect as NRI/Out-of-City Buyer
@@ -117,8 +117,8 @@ export const OutOfCitySection = () => {
               className="absolute -bottom-6 -left-6 md:left-8 bg-card p-4 rounded-xl shadow-xl"
             >
               <div className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-full bg-accent/10 flex items-center justify-center">
-                  <Video className="w-5 h-5 text-accent" />
+                <div className="w-10 h-10 rounded-full bg-primary/10 flex items-center justify-center">
+                  <Video className="w-5 h-5 text-primary" />
                 </div>
                 <div>
                   <p className="text-foreground font-medium text-sm">Live Video Visit</p>

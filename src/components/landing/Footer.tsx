@@ -12,27 +12,27 @@ const quickLinks = [
 
 export const Footer = () => {
   return (
-    <footer className="bg-foreground text-background py-12 md:py-16">
+    <footer className="bg-hero text-hero-foreground py-12 md:py-16 border-t border-hero-foreground/10">
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
           {/* Brand */}
           <div className="lg:col-span-2">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-8 h-8 bg-accent rounded-lg flex items-center justify-center">
-                <span className="text-accent-foreground font-bold text-lg">N</span>
+              <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
+                <span className="text-primary-foreground font-bold text-lg">N</span>
               </div>
               <span className="font-semibold text-lg">Nagpur Property Expert</span>
             </div>
-            <p className="text-background/70 text-sm leading-relaxed max-w-md mb-4">
-              Your trusted local partner for verified Nagpur properties. 
-              We help local and out-of-city buyers invest with confidence through 
+            <p className="text-hero-muted text-sm leading-relaxed max-w-md mb-4">
+              Your trusted local partner for verified Nagpur properties.
+              We help local and out-of-city buyers invest with confidence through
               transparent process and honest guidance.
             </p>
             <a
               href={`https://wa.me/${WHATSAPP_NUMBER}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
+              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 transition-colors font-medium"
             >
               <MessageCircle className="w-4 h-4" />
               Chat on WhatsApp
@@ -47,7 +47,7 @@ export const Footer = () => {
                 <li key={link.href}>
                   <a
                     href={link.href}
-                    className="text-background/70 hover:text-background text-sm transition-colors"
+                    className="text-hero-muted hover:text-primary text-sm transition-colors"
                   >
                     {link.label}
                   </a>
@@ -69,7 +69,7 @@ export const Footer = () => {
                 info@nagpurproperty.com
               </li>
               <li className="flex items-start gap-2 text-background/70 text-sm">
-                <MapPin className="w-4 h-4 mt-0.5" />
+                <MapPin className="w-4 h-4 mt-0.5 text-primary" />
                 <span>Nagpur, Maharashtra, India</span>
               </li>
             </ul>
