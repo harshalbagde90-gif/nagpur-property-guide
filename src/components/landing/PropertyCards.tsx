@@ -17,7 +17,7 @@ const properties = [
     priceRange: "₹69.0 L – ₹91.45 L",
     tags: ["High-Rise", "Premium"],
     highlight: "Besa's Tallest Towers",
-    image: "/Properties/New%20folder/1.jpg",
+    image: "/Properties/New%20folder/1.jpeg",
     appreciation: "+10.2% YoY",
     type: "Flat",
     slug: "pyramid-amara",
