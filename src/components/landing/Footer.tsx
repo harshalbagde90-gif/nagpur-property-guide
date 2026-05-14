@@ -21,7 +21,7 @@ export const Footer = () => {
               <div className="w-8 h-8 bg-primary rounded-lg flex items-center justify-center shadow-lg shadow-primary/20">
                 <span className="text-primary-foreground font-bold text-lg">N</span>
               </div>
-              <span className="font-semibold text-lg">Nagpur Property Expert</span>
+              <span className="font-semibold text-lg">Worldwide Best Property</span>
             </div>
             <p className="text-hero-muted text-sm leading-relaxed max-w-md mb-4">
               Your trusted local partner for verified Nagpur properties.
@@ -79,7 +79,7 @@ export const Footer = () => {
         {/* Bottom */}
         <div className="pt-8 border-t border-background/10 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-background/50 text-sm">
-            © 2025 Nagpur Property Expert. All rights reserved.
+            © 2025 Worldwide Best Property. All rights reserved.
           </p>
           <p className="text-background/50 text-xs">
             Disclaimer: Property investment carries risks. Past returns are not indicative of future performance.
