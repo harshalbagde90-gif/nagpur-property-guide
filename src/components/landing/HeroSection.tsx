@@ -76,7 +76,7 @@ export const HeroSection = () => {
             className="inline-flex items-center gap-2 bg-hero-foreground/10 border border-hero-foreground/20 text-hero-foreground px-4 py-2 rounded-full text-sm font-medium backdrop-blur-sm"
           >
             <span className="w-2 h-2 bg-accent rounded-full animate-pulse" />
-            Your Trusted Nagpur Property Expert
+            Worldwide Best Property
           </motion.div>
 
           {/* Headline */}

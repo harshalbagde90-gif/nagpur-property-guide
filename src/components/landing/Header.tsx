@@ -45,7 +45,7 @@ export const Header = () => {
                 <span className="text-accent-foreground font-bold text-lg">N</span>
               </div>
               <span className="text-hero-foreground font-semibold text-lg hidden sm:block">
-                Nagpur Property
+                Worldwide Best Property
               </span>
             </a>
 
